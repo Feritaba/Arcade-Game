@@ -1,10 +1,6 @@
-// Enemies our player must avoid
+// Enemies object
 var Enemy = function(x,y,speed) {
-    // Variables applied to each of our instances go here,
-    // we've provided one for you to get started
 
-    // The image/sprite for our enemies, this uses
-    // a helper we've provided to easily load images
     this.x = x;
     this.y = y + 55;
     this.speed = speed;
@@ -14,12 +10,8 @@ var Enemy = function(x,y,speed) {
     this.resetPos = -this.step;
 };
 
-// Update the enemy's position, required method for game
-// Parameter: dt, a time delta between ticks
+// Update the enemy's position
 Enemy.prototype.update = function(dt) {
-    // You should multiply any movement by the dt parameter
-    // which will ensure the game runs at the same speed for
-    // all computers.
 
     if (this.x < this.boundry) {
         this.x += this.speed * dt;
@@ -28,14 +20,12 @@ Enemy.prototype.update = function(dt) {
     }
 };
 
-// Draw the enemy on the screen, required method for game
+// Draw the enemy on the screen
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-// Now write your own player class
-// This class requires an update(), render() and
-// a handleInput() method.
+// Player class
 var FirstPlayer = function () {
     this.sprite = 'images/char-horn-girl.png';
     this.step = 101;
@@ -46,10 +36,12 @@ var FirstPlayer = function () {
     this.y = this.startY;
 };
 
+// Draw the player on the screen
 FirstPlayer.prototype.render = function() {
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
+// Player moves with arrow keys
 FirstPlayer.prototype.handleInput = function(input) {
     switch(input) {
         case 'left' :
@@ -75,6 +67,7 @@ FirstPlayer.prototype.handleInput = function(input) {
     }
 };
 
+// Update the player's position
 FirstPlayer.prototype.update = function(){
     for (let enemy of allEnemies) {
         if ((this.y === enemy.y) && (enemy.x + enemy.step/2 > this.x
@@ -82,21 +75,21 @@ FirstPlayer.prototype.update = function(){
                 this.reset();
         }
     }
+
+    // Won the game alert
     if ( this.y < 55 ) {
         alert('You won!!');
         this.reset();
     }
 }
 
+// Reset the player's position
 FirstPlayer.prototype.reset = function() {
     this.y = this.startY;
     this.x = this.startX;
 }
 
-// Now instantiate your objects.
-// Place all enemy objects in an array called allEnemies
-// Place the player object in a variable called player
-
+// Instantiate our objects (player and enemy)
 const player = new FirstPlayer();
 const enemy1 = new Enemy(-101,0, 350);
 const enemy2 = new Enemy(-101,83, 300);
@@ -105,8 +98,7 @@ const enemy4 = new Enemy(-101,83, 400);
 const allEnemies = [];
 allEnemies.push(enemy1,enemy2,enemy3,enemy4);
 
-// This listens for key presses and sends the keys to your
-// Player.handleInput() method. You don't need to modify this.
+// Listens for key presses and sends the keys to your player
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {
         37: 'left',
