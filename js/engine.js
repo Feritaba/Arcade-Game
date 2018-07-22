@@ -20,7 +20,7 @@ var Engine = (function(global) {
 
         lastTime = now;
 
-        win.requestAnimationFrame(main);      
+        win.requestAnimationFrame(main);
     }
 
     // This function does some initial setup
@@ -30,7 +30,6 @@ var Engine = (function(global) {
     }
 
     // This function is called by main (our game loop)
-
     function update(dt) {
         updateEntities(dt);
     }
@@ -56,7 +55,7 @@ var Engine = (function(global) {
             numRows = 6,
             numCols = 5,
             row, col;
-        
+
         // Before drawing, clear existing canvas
         ctx.clearRect(0,0,canvas.width,canvas.height)
 

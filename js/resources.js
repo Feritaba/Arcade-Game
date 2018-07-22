@@ -17,7 +17,6 @@
     // This is our private image loader function
     function _load(url) {
         if(resourceCache[url]) {
-
             return resourceCache[url];
         } else {
             var img = new Image();
