@@ -25,7 +25,6 @@ var Engine = (function(global) {
 
     // This function does some initial setup
     function init() {
-        reset();
         lastTime = Date.now();
         main();
     }

@@ -2,7 +2,7 @@
 var Enemy = function(x,y,speed) {
 
     this.x = x;
-    this.y = y + 55;
+    this.y = y + 60;
     this.speed = speed;
     this.sprite = 'images/enemy-bug.png';
     this.step = 101;
@@ -31,7 +31,7 @@ var FirstPlayer = function () {
     this.step = 101;
     this.jump = 83;
     this.startX = this.step * 2;
-    this.startY = (this.jump * 4) + 55;
+    this.startY = (this.jump * 4) + 60;
     this.x = this.startX;
     this.y = this.startY;
 };
@@ -77,7 +77,7 @@ FirstPlayer.prototype.update = function(){
     }
 
     // Won the game alert
-    if ( this.y < 55 ) {
+    if ( this.y < 60 ) {
         alert('You won!!');
         this.reset();
     }
