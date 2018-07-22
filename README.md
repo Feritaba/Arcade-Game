@@ -1,6 +1,8 @@
-frontend-nanodegree-arcade-game
+# frontend-nanodegree-arcade-game
 ===============================
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+## How To Run The Game
+You can just download the ZIP file and open the index.html file in your browser.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+## How To Play
+It's easy to play. First, you have a player you can move the arrow keys to the right, left, up and down. You should reach the blue area by going up and runaway from bugs. Once you are in green area you are safe. If any of those bugs hit you, you will start from the first position. You can be a winner if you get to the blue area, then it will show you the alert. You can press OK to restart the game.
