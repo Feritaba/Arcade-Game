@@ -2,7 +2,7 @@
 class Enemy {
     constructor(x,y,speed) {
         this.x = x;
-        this.y = y + 51;
+        this.y = y + 50;
         this.speed = speed;
         this.sprite = 'images/enemy-bug.png';
         this.step = 101;
@@ -12,7 +12,6 @@ class Enemy {
 
     // Update the enemy's position
     update(dt) {
-
         if (this.x < this.boundry) {
             this.x += this.speed * dt;
         } else {
@@ -33,7 +32,7 @@ class FirstPlayer {
         this.step = 101;
         this.jump = 83;
         this.startX = this.step * 2;
-        this.startY = (this.jump * 4) + 51;
+        this.startY = (this.jump * 4) + 50;
         this.x = this.startX;
         this.y = this.startY;
     }
@@ -72,14 +71,14 @@ class FirstPlayer {
     // Update the player's position(collision)
     update() {
         for (let enemy of allEnemies) {
-            if ( (this.y === enemy.y) && (enemy.x + enemy.step/2 + 30 > this.x)
-                && (enemy.x < this.x + this.step/2) ) {
+            if ( (this.y === enemy.y) && (enemy.x + enemy.step/2 + 20 > this.x)
+                && (enemy.x < this.x + this.step/2 + 10) ) {
                     this.reset();
             }
         }
 
         // Won the game alert
-        if ( this.y < 55 ) {
+        if ( this.y < 50 ) {
             alert('You won!!');
             this.reset();
         }
