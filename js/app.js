@@ -69,10 +69,10 @@ class FirstPlayer {
         }
     }
 
-    // Update the player's position
+    // Update the player's position(collision)
     update() {
         for (let enemy of allEnemies) {
-            if ( (this.y === enemy.y) && (enemy.x + enemy.step/2 + 20 > this.x)
+            if ( (this.y === enemy.y) && (enemy.x + enemy.step/2 + 30 > this.x)
                 && (enemy.x < this.x + this.step/2) ) {
                     this.reset();
             }
@@ -97,7 +97,7 @@ const player = new FirstPlayer();
 const allEnemies = [
     new Enemy (-101,0, 350),
     new Enemy(-101,83, 300),
-    new Enemy((-101*2.5), (83 * 2), 30),
+    new Enemy((-101*2.5), (83 * 2), 200),
     new Enemy(-101,83, 400)
     ];
 
